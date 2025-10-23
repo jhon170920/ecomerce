@@ -43,12 +43,88 @@
                     </a>
                 </div>
                 <!-- Cart and Mobile Menu MEJORADOS -->
-                 <div class="flex">
+                 <div class="flex items-center space-x-4">
+                    <!--Icono de carrito Mejorado - coherente con carrito -->
+                    <a href="#" class="cart-icon relative group p-2.5 hover:bg-linear-to-r hover:from-blue-50 hover:to-indigo-50 rounded-xl 
+                    transition-all duration-300 transform hover:scale-105">
+                    <svg class="w-6 h-6 text-gray-700 group-hover:text-blue-600 transition-all duration-300 group-hover:rotate-3" fill="none"
+                    stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M3 3h2l.4 2M7 13h10l4-8H5.4m0 0L7 13m0 0l-1.1 5M7 13l-1.1
+                    5m0 0h1.1m0-5v5m0 0h10m-10 0a2 2 0 104 0m6 0a2 2 0 100 4"/>
+                    </svg>
+                    <!-- Contador con efecto pulso mejorado -->
+                     <span id="cart-counter" class="cart-counter-pulse absolute -top2 -right-2 bg-linear-to-r from-red-500 via-pink-500 to-red-600
+                     text-white text-xs font-bold rounded-full min-w-5 h-5 flex items-center justify-center px-1 shadow-lg border-2 border-white" 
+                     style="display: none;"> 0 </span>        
+                </a>
 
                  </div>
             </div>
         </nav>
 
     </header>
+    <main>
+        <!--Hero section-->
+        <section class="hero bg-linear-to-r from-blue-600 via-purple-600 to-indigo-600 text-white py-20 relative overflow-hidden">
+            <div class="absolute inset-0 bg-black opacity-10">
+            </div>
+            <div class="container mx-auto px4 text-center relative z-10">
+                <h1 class="text-5xl md:text-6xl font-bold mb-6 animate-fade-in">
+                    Encuentra la mejor <span class="text-yellow-300">tecnologia</span>
+                </h1>
+                <p class="text-xl md:text-2xl mb-8 opacity-90">
+                    Laptops, celulares y componentes PC al mejor precio del mercado. 
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="#" class="bg-white text-blue-600 px-8 py-4 rounded-lg text-lg font-semibold hover:bg-gray-100 transition
+                    duration-300 transform hover:scale-105">
+                Ver Productos
+                </a>
+                <button class="border-2 border-white text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-white hover:text-blue-600 
+                transition duration-300">
+                Ofertas Especiales
+                </button>
+                </div>
+            </div>
+        </section>
+    
+        <!--Categorias-->
+        <section id="categorias" class="categorias py-16 bg-gray-50">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-12">
+                    <h2 class="text-4xl font-bold mb-4">
+                        Nuestras Categorías
+                    </h2>
+                    <p class="text-gray-600 text-lg">
+                        Descubre nuestra amplia gama de productos tecnologícos
+                    </p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!--Categorias laptops-->
+                    <div class="bg-white p-8 rounded-xl shadow-lg text-center hover:shadow-2xl transition duration-300 transform
+                     hover:translate-y-2 cursor-pointer category-card product-hover" data-category="laptops">
+                     <div class="text-6xl mb-6 filter drop-shadow-lg">
+                      💻
+                     </div>
+                     <h3 class="text-2xl font-bold mb-4 text-gray-800">
+                        Laptops
+                     </h3>
+                     <p class="text-gray-600 mb-6">
+                        Las mejores marcas y modelos para trabajo y gaming
+                     </p>
+                     <div class="text-blue-600 font-semibold">
+                        Ver mas
+                     </div>
+                    </div>
+                    <!--Categorias Celulares-->
+                    <div class="bg-white p-8 rounded-xl shadow-lg text-center hover:shadow-2xl transition duration-300 transform 
+                    hover:translate-y-2 cursor-pointer category-card product-hover">
+
+                    </div>
+                </div>
+            </div>
+
+        </section>
+    </main>
 </body>
 </html>
