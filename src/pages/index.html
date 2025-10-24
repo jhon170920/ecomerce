@@ -150,7 +150,7 @@
                         Los productos mas populares de nuestra tienda
                     </p>
                 </div>
-                <div class="grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="productos-grid">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="productos-grid">
                     <!-- PRODUCTO 1: MACBOOK PRO -->
                     <div class="border rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition
                       duration-300 transform hover:-translate-y-1 product-card product-hover">
@@ -194,7 +194,7 @@
                             </div>
                         </div>
                     </div>
-                    <!-- PRODUCTO 2: IPHONE 15 PRO -->
+                    <!-- PRODUCTO 3: IPHONE 15 PRO -->
                     <div class="border rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition
                       duration-300 transform hover:-translate-y-1 product-card product-hover">
                       <div class="bg-linear-to-br from-gray-100 to-gray-200 h-64 flex items-center justify-center 
@@ -234,9 +234,115 @@
                             </div>
                         </div>
                     </div>
+                    <!-- PRODUCTO 3: RTX 4070 SUPER -->
+                    <div class="border rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition
+                      duration-300 transform hover:-translate-y-1 product-card product-hover">
+                      <div class="bg-linear-to-br from-gray-100 to-gray-200 h-64 flex items-center justify-center 
+                      relative overflow-hidden">
+                        <img  src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=600" class="w-full h-full object-cover"> 
+                        <div class="absolute top-4 right-4 bg-red-500 text-white px-2 py-1 rounded-full text-sm font-bold">
+                            -20%
+                        </div>
+                      </div>
+                        <div class="p-6">
+                            <h3 class="font-bold text-xl mb-2 text-gray-800">
+                                RTX 4070 Super
+                            </h3>
+                            <p class="text-gray-600 mb-4">
+                                Tarjeta gráfica de nueva generación para gaming
+                            </p>
+                            <div class="flex items-center mb-4">
+                                <div class="flex text-yellow-400">
+                                    ⭐⭐⭐⭐⭐
+                                </div>
+                                <span class=" text-gray-500 text-sm ml-2">
+                                    (156 reseñas)
+                                </span>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <div>
+                                    <span class="text-gray-400 line-through text-sm">
+                                        $749,000
+                                    </span>
+                                    <span class="text-3xl font-bold text-blue-600 ml-2">
+                                        $599,000
+                                    </span>
+                                </div>
+                            
+                                <!-- BOTÓN MEJORADO coherente -->
+                                <button class="bg-linear-to-r from-blue-600 to-purple-600 hover:from-blue-700 
+                                text-white px-6 py-2 rounded-lg transition-all duration-200 add-to-cart-btn transform hover:scale-105" data-product="RTX 4070 SUPER" data-price="599000" data-id="rtx-4070-super" data-image="https://images.unsplash.com/photo-
+                                1580894894513-541e068a3e2b?w=600">
+                                    Comprar
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--Boton ver mas productos-->
+                <div class="text-center mt-12">
+                    <a href="#" class="bg-gray-800 text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-gray-700 transition duration-300 transform hover:scale-105">
+                        Ver todos los Productos
+                    </a>
                 </div>
             </div>
          </section>
     </main>
+    <!-- Footer mejorado coherente con carrito.html -->
+     <footer id="contacto" class="bg-gray-900 text-white py-12">
+        <div class="max-w-7xl max-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center mb-4">
+                        <div class="bg-linear-to-r from-blue-600 to-purple-600 text-white p-2 rounded-lg mr-3">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0
+                            0 20 20">
+                            <path d="M3 4a1 1 0 011-1h12a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1V4zM3 10a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H4a1 1 0 01-1-1v-6zM14 9a1 1 0 00-1 1v6a1 1 0 001 1h2a1 1 0 001-1v-6a1 1 0 00-1-1h-2z"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-bold">
+                            TechStore Pro
+                        </h3>
+                    </div>
+                    <p class="text-gray-400 mb-4">
+                        Tu tienda de tecnologia de confianza con los mejores productos y precios.
+                    </p>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">
+                    Enlaces 
+                    </h3>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="./index.html" class="hover:text-white transition-colors duration-200">Inicio</a></li>
+                        <li><a href="./productos.html" class="hover:text-white transition-colors duration-200">Productos</a></li>
+                        <li><a href="./carrito.html" class="hover:text-white transition-colors duration-200">Carrito</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">
+                        Atención
+                    </h3>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" class="hover:text-white transition-colors duration-200">contacto </a></li>
+                        <li><a href="#" class="hover:text-white transition-colors duration-200">Envíos </a></li>
+                        <li><a href="#" class="hover:text-white transition-colors duration-200">Devoluciones </a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Legal</h3>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" class="hover:text-white transition-colors duration-200">Términos</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors duration-200">Privacidad</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors duration-200">Cookies</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
+                <p>
+                    &copy; 2025 TechStore Pro. Todos los derechos reservados.
+                </p>
+            </div>
+        </div>
+     </footer>
 </body>
 </html>
