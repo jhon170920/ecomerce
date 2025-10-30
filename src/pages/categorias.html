@@ -33,7 +33,7 @@
                         Productos
                         <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-600 transition-all duration-200 group-hover:w-full"></span>
                     </a>
-                    <a href="#" class="text-gray-700 hover:text-blue-600 font-medium transition-colors duration-200 relative group">
+                    <a href="./categorias.html" class="text-gray-700 hover:text-blue-600 font-medium transition-colors duration-200 relative group">
                         Categorias
                         <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-600 transition-all duration-200 group-hover:w-full"></span>
                     </a>
@@ -64,80 +64,291 @@
 
     </header>
     <main>
-        <!--Hero section-->
-        <section class="hero bg-linear-to-r from-blue-600 via-purple-600 to-indigo-600 text-white py-20 relative overflow-hidden">
-            <div class="absolute inset-0 bg-black opacity-10">
-            </div>
-            <div class="container mx-auto px4 text-center relative z-10">
-                <h1 class="text-5xl md:text-6xl font-bold mb-6 animate-fade-in">
-                    Encuentra la mejor <span class="text-yellow-300">tecnologia</span>
-                </h1>
-                <p class="text-xl md:text-2xl mb-8 opacity-90">
-                    Laptops, celulares y componentes PC al mejor precio del mercado. 
-                </p>
-                <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                    <a href="#" class="bg-white text-blue-600 px-8 py-4 rounded-lg text-lg font-semibold hover:bg-gray-100 transition
-                    duration-300 transform hover:scale-105">
-                Ver Productos
-                </a>
-                <button class="border-2 border-white text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-white hover:text-blue-600 
-                transition duration-300">
-                Ofertas Especiales
-                </button>
-                </div>
-            </div>
-        </section>
-    
         <!--Categorias-->
-        <section id="categorias" class="categorias py-16 bg-gray-50">
-            <div class="container mx-auto px-4">
-                <div class="text-center mb-12">
-                    <h2 class="text-4xl font-bold mb-4">
-                        Nuestras Categorías
-                    </h2>
-                    <p class="text-gray-600 text-lg">
-                        Descubre nuestra amplia gama de productos tecnologícos
-                    </p>
-                </div>
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <section class="categorias py-16 mx-auto">
+            <div><h1 class="text-4xl font-bold text-center">Categorias</h1>
+            </div>
                     <!--Categorias laptops-->
-                    <div class="bg-white p-8 rounded-xl shadow-lg text-center hover:shadow-2xl transition duration-300 transform
-                     hover:translate-y-2 cursor-pointer category-card product-hover" data-category="laptops">
-                     <div class="text-6xl mb-6 filter drop-shadow-lg">
-                      💻
-                     </div>
-                     <h3 class="text-2xl font-bold mb-4 text-gray-800">
-                        Laptops
+                    <div>
+                     <h3 class="text-2xl font-bold mb-4 text-gray-800 ml-40 mt-4  ">
+                        PC
                      </h3>
-                     <p class="text-gray-600 mb-6">
-                        Las mejores marcas y modelos para trabajo y gaming
-                     </p>
-                     <div class="text-blue-600 font-semibold">
-                        Ver mas
-                     </div>
+                    </div>
+                    <div class="container grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mx-auto py-8">
+                        <!--Producto 1: Microsoft surface-->
+                        <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl trasition duration-300 transform hover:-translate-y-1 product-card">
+                            <div class="bg-linear-to-br from-gray-100 h-48 flex items-center justify-center relative overflow-hidden">
+                                <img src="../img/pc-1-surface-laptop.jpg" 
+                                alt="Microsoft Surface Laptop" 
+                                class="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                                loading="lazy">
+                            </div>
+                            <div class="p-6">
+                                <h3 class="text-lg font-bold mb-2 text-gray-800">
+                                    Microsoft Surface Laptop
+                                </h3>
+                                <p class="text-sm text-gray-600 mb-4">Microsoft 13.8" Surface Laptop Copilot+ PC (7th Edition, Black)</p>
+                                <div class="flex items-center justify-between mb-4">
+                                    <div>
+                                        <span class="text-2xl font-bold text-blue-600">$x.xxx.xxx</span> 
+                                    </div>
+                                </div>
+                                <div class="flex space-x-2">
+                                    <button class="ver-detallles-btn bg-green-600 text-white px-3 py-2 rounded-lg hover:bg-green-700 transition duration-300 flex-1 text-sm">
+                                        Ver Detalles
+                                    </button>
+                                    <button class="add-to-cart-btn bg-blue-600 text-white px-3 py-2 rounded-lg hover:bg-blue-700 transition duration-300 flex-1 text-sm">
+                                            Comprar
+                                        </button>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                        <!--PRODUCTO 2: Macbook Air M2-->
+                        <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl trasition duration-300 transform hover:-translate-y-1 product-card">
+                            <div class="bg-linear-to-br from-gray-200 h-48 flex items-center justify-center relative overflow-hidden">
+                                <img src="../img/02-Macbook-Air.webp" 
+                                alt="MacBook Air M2"
+                                class="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                                loading="lazy">
+                            
+                            </div>
+                            <div class="p-6">
+                                <h3 class="text-lg font-bold mb-2 text-gray-800">
+                                    Macbook Air M2
+                                </h3>
+                                <p class="text-sm text-gray-600 mb-4">Macbook Air con chip M2</p>
+                                <div class="flex items-center justify-between mb-4">
+                                    <div class="mt-5">
+                                        <span class="text-2xl font-bold text-blue-600">$xxx.xxx.xxx</span> 
+                                    </div>
+                                    
+                                </div>
+                                <div class="flex space-x-2">
+                                    <button class="ver-detallles-btn bg-green-600 text-white px-3 py-2 rounded-lg hover:bg-green-700 transition duration-300 flex-1 text-sm" data-product-id="macbook-air-m2">
+                                        Ver Detalles
+                                    </button>
+                                        <button class="add-to-cart-btn bg-blue-600 text-white px-3 py-2 rounded-lg hover:bg-blue-700 transition duration-300 flex-1 text-sm">
+                                            Comprar
+                                        </button>
+                                </div>
+                            </div>
+                        </div>
+                        <!--Producto 3: HP Spectre x360-->
+                        <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl trasition duration-300 transform hover:-translate-y-1 product-card">
+                            <div class="bg-linear-to-br from-gray-200 h-48 flex items-center justify-center relative overflow-hidden">
+                                <img src="../img/03-hpspectre.avif" 
+                                alt="HP Spectre x360" 
+                                class="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                                loading="lazy">    
+                            </div>
+                            <div class="p-6">
+                                <h3 class="text-lg font-bold mb-2 text-gray-800">
+                                    HP Spectre x360
+                                </h3>
+                                <p class="text-sm text-gray-600 mb-4">Portátil HP Spectre x360 Convertible 14-ea0001la - 13.5</p>
+                                <div class="flex items-center justify-between mb-4">
+                                    <div>
+                                        <span class="text-2xl font-bold text-blue-600">$x.x00.000</span> 
+                                    </div>
+    
+                                </div>
+                                <div class="flex space-x-2">
+                                        <button class="ver-detallles-btn bg-green-600 text-white px-3 py-2 rounded-lg hover:bg-green-700 transition duration-300 flex-1 text-sm" data-product-id="hp-spectre-x360">
+                                        Ver Detalles
+                                    </button>
+                                        <button class="add-to-cart-btn bg-blue-600 text-white px-3 py-2 rounded-lg hover:bg-blue-700 transition duration-300 flex-1 text-sm">
+                                            Comprar
+                                        </button>
+                                </div>
+                            </div>
+                        </div>
+                        <!--PRODUCTO 4:Torre Gamer Ryzen7-->
+                        <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl trasition duration-300 transform hover:-translate-y-1 product-card">
+                            <div class="bg-linear-to-br from-gray-200 h-48 flex items-center justify-center relative overflow-hidden">
+                                <img src="../img/pc/04-pc-1.webp" 
+                                alt="Torre Gamer Ryzen7"
+                                class="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                                loading="lazy">    
+                            </div>
+                            <div class="p-6">
+                                <h3 class="text-lg font-bold mb-2 text-gray-800">
+                                    Torre Gamer Ryzen7
+                                </h3>
+                                <p class="text-sm text-gray-600 mb-4">Torre Gamer Ryzen7-5700g-32gb Ram-rtx3050 6gb-1tb Ssd-board</p>
+                                <div class="flex items-center justify-between mb-4">
+                                    <div>
+                                        <span class="text-2xl font-bold text-blue-600">$3.229.000</span> 
+                                    </div>
+    
+                                </div>
+                                <div class="flex space-x-2">
+                                        <button class="ver-detallles-btn bg-green-600 text-white px-3 py-2 rounded-lg hover:bg-green-700 transition duration-300 flex-1 text-sm" data-product-id="torre-gamer-ryzen7">
+                                        Ver Detalles
+                                    </button>
+                                        <button class="add-to-cart-btn bg-blue-600 text-white px-3 py-2 rounded-lg hover:bg-blue-700 transition duration-300 flex-1 text-sm">
+                                            Comprar
+                                        </button>
+                                </div>
+                            </div>
+                        </div>
+                            <!--PRODUCTO 5: Torre Gamer cpu core i7-->
+                            <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl trasition duration-300 transform hover:-translate-y-1 product-card">
+                                <div class="bg-linear-to-br from-gray-200 h-48 flex items-center justify-center relative overflow-hidden">
+                                    <img src="../img/pc/05-pc-2.webp" 
+                                    alt="Torre Gamer Cpu Core I7"
+                                    class="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                                    loading="lazy">    
+                                </div>
+                                <div class="p-6">
+                                    <h3 class="text-lg font-bold mb-2 text-gray-800">
+                                        Torre Gamer Cpu Core I7
+                                    </h3>
+                                    <p class="text-sm text-gray-600 mb-4">Torre Gamer Cpu Core I7 12700 32ram 512 Ssd Rtx 3060 12gb Gama alta</p>
+                                    <div class="flex items-center justify-between mb-4">
+                                        <div>
+                                            <span class="text-2xl font-bold text-blue-600">$4.999.000</span> 
+                                        </div>
+        
+                                    </div>
+                                    <div class="flex space-x-2">
+                                            <button class="ver-detallles-btn bg-green-600 text-white px-3 py-2 rounded-lg hover:bg-green-700 transition duration-300 flex-1 text-sm" data-product-id="torre-gamer-ryzen7">
+                                            Ver Detalles
+                                        </button>
+                                            <button class="add-to-cart-btn bg-blue-600 text-white px-3 py-2 rounded-lg hover:bg-blue-700 transition duration-300 flex-1 text-sm">
+                                                Comprar
+                                            </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--PRODUCTO 6: Torre Gamer ARGB-->
+                        <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl trasition duration-300 transform hover:-translate-y-1 product-card" data-category="pc" data-product-id="torre-gamer-argb">
+                            <div class="bg-linear-to-br from-gray-200 h-48 flex items-center justify-center relative overflow-hidden">
+                                <img src="../img/pc/06-pc-3.webp" 
+                                alt="Torre Gamer Argb Líquido Up I7-12700" 
+                                class="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                                loading="lazy">    
+                            </div>
+                            
+                            <div class="p-6">
+                                <h3 class="text-lg font-bold mb-2 text-gray-800">
+                                    Torre Gamer Argb Líquido Up I7-12700
+                                </h3>
+                                <p class="text-sm text-gray-600 mb-4">Pc Para Juegos Argb Líquido Up I7-12700 64 Gb Ram 1 Tb Ssd 4</p>
+                                <div class="flex items-center justify-between mb-4">
+                                    <div>
+                                        <span class="text-2xl font-bold text-blue-600">$3.547.000</span> 
+                                    </div>
+                                
+                                </div>
+                                <div class="flex space-x-2">
+                                        <button class="ver-detallles-btn bg-green-600 text-white px-3 py-2 rounded-lg hover:bg-green-700 transition duration-300 flex-1 text-sm" data-product-id="torre-gamer-argb">
+                                        Ver Detalles
+                                    </button>
+                                        <button class="add-to-cart-btn bg-blue-600 text-white px-3 py-2 rounded-lg hover:bg-blue-700 transition duration-300 flex-1 text-sm">
+                                            Comprar
+                                        </button>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                     <!--Categorias Celulares-->
-                    <div class="bg-white p-8 rounded-xl shadow-lg text-center hover:shadow-2xl transition duration-300 transform 
-                    hover:translate-y-2 cursor-pointer category-card product-hover" data-category="celulares">
-                    <div class="text-6xl mb-6 filter drop-shadow-lg">
-                        📱
-                    </div>
-                    <h3 class="text-2xl font-bold mb-4 text-gray-800">Celulares</h3>
-                    <p class="text-gray-600 mb-6">Última tecnologia móvil de las marcas</p>
-                    <div class="text-blue-600 font-semibold">Ver mas </div>
-                    </div>
-                    <!--Categorias Componentes-->
-                    <div class="bg-white p-8 rounded-xl shadow-lg text-center hover:shadow-2xl transition duration-300 transform 
-                    hover:translate-y-2 cursor-pointer category-card product-hover" data-category="componentes">
-                    <div class="text-6xl mb-6 filter drop-shadow-lg">
-                        ⚙️
-                    </div>
-                    <h3 class="text-2xl font-bold mb-4 text-gray-800">Componentes PC</h3>
-                    <p class="text-gray-600 mb-6">Arma tu PC ideal con los mejores componentes</p>
-                    <div class="text-blue-600 font-semibold">Ver mas </div>
-                    </div>
-                </div>
-            </div>
+                    <div>
+                        <h3 class="text-2xl font-bold mb-4 text-gray-800 ml-40 mt-4  ">
+                           Celulares
+                        </h3>
+                       </div>
+                       <div class="container grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mx-auto py-8">
+                           <!--Producto 1: Xiaomi Poco-->
+                           <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl trasition duration-300 transform hover:-translate-y-1 product-card">
+                               <div class="bg-linear-to-br from-gray-100 h-48 flex items-center justify-center relative overflow-hidden">
+                                   <img src="../img/celular/xiaomi-poco.webp" 
+                                   alt="Microsoft Surface Laptop" 
+                                   class="w-auto h-full object-cover hover:scale-105 transition-transform duration-300"
+                                   loading="lazy">
+                               </div>
+                               <div class="p-6">
+                                   <h3 class="text-lg font-bold mb-2 text-gray-800">
+                                       Xiaomi Poco C71
+                                   </h3>
+                                   <p class="text-sm text-gray-600 mb-4">Celular Xiaomi Poco C71 128Gb 4Gb</p>
+                                   <div class="flex items-center justify-between mb-4">
+                                       <div>
+                                           <span class="text-2xl font-bold text-blue-600">$229.900</span> 
+                                       </div>
+                                   </div>
+                                   <div class="flex space-x-2">
+                                       <button class="ver-detallles-btn bg-green-600 text-white px-3 py-2 rounded-lg hover:bg-green-700 transition duration-300 flex-1 text-sm">
+                                           Ver Detalles
+                                       </button>
+                                       <button class="add-to-cart-btn bg-blue-600 text-white px-3 py-2 rounded-lg hover:bg-blue-700 transition duration-300 flex-1 text-sm">
+                                               Comprar
+                                           </button>
+                                       
+                                   </div>
+                               </div>
+                           </div>
+                           <!--PRODUCTO 2: Xiaomi Poco X7 Pro 5G-->
+                           <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl trasition duration-300 transform hover:-translate-y-1 product-card">
+                               <div class="bg-linear-to-br from-gray-200 h-48 flex items-center justify-center relative overflow-hidden">
+                                   <img src="../img/celular/poco-x7.webp" 
+                                   alt="Xiaomi Poco X7 Pro 5G"
+                                   class="w-auto h-full object-cover hover:scale-105 transition-transform duration-300"
+                                   loading="lazy">
+                               
+                               </div>
+                               <div class="p-6">
+                                   <h3 class="text-lg font-bold mb-2 text-gray-800">
+                                       Xiaomi Poco X7 Pro 5G
+                                   </h3>
+                                   <p class="text-sm text-gray-600 mb-4">Celular Xiaomi Poco X7 Pro 5G</p>
+                                   <div class="flex items-center justify-between mb-4">
+                                       <div>
+                                           <span class="text-2xl font-bold text-blue-600">$1.219.000</span> 
+                                       </div>
+                                       
+                                   </div>
+                                   <div class="flex space-x-2">
+                                       <button class="ver-detallles-btn bg-green-600 text-white px-3 py-2 rounded-lg hover:bg-green-700 transition duration-300 flex-1 text-sm">
+                                           Ver Detalles
+                                       </button>
+                                           <button class="add-to-cart-btn bg-blue-600 text-white px-3 py-2 rounded-lg hover:bg-blue-700 transition duration-300 flex-1 text-sm">
+                                               Comprar
+                                           </button>
+                                   </div>
+                               </div>
+                           </div>
+                           <!--Producto 3: Celular Infinix Gt 30-->
+                           <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl trasition duration-300 transform hover:-translate-y-1 product-card">
+                               <div class="bg-linear-to-br from-gray-200 h-48 flex items-center justify-center relative overflow-hidden">
+                                   <img src="../img/celular/infinix-gt.webp" 
+                                   alt="HP Spectre x360" 
+                                   class="w-auto h-full object-cover hover:scale-105 transition-transform duration-300"
+                                   loading="lazy">    
+                               </div>
+                               <div class="p-6">
+                                   <h3 class="text-lg font-bold mb-2 text-gray-800">
+                                    Celular Infinix Gt 30
+                                   </h3>
+                                   <p class="text-sm text-gray-600 mb-4">Celular Infinix Gt 30 Pro 5G 256Gb</p>
+                                   <div class="flex items-center justify-between mb-4">
+                                       <div>
+                                           <span class="text-2xl font-bold text-blue-600">$1.999.900</span> 
+                                       </div>
+       
+                                   </div>
+                                   <div class="flex space-x-2">
+                                           <button class="ver-detallles-btn bg-green-600 text-white px-3 py-2 rounded-lg hover:bg-green-700 transition duration-300 flex-1 text-sm" data-product-id="hp-spectre-x360">
+                                           Ver Detalles
+                                       </button>
+                                           <button class="add-to-cart-btn bg-blue-600 text-white px-3 py-2 rounded-lg hover:bg-blue-700 transition duration-300 flex-1 text-sm">
+                                               Comprar
+                                           </button>
+                                   </div>
+                               </div>
+                           </div>
+                          
+                                     
         </section>
         <!-- Productos destacados MEJORADOS -->
          <section class="productos-destacados py-16 bg-white">
