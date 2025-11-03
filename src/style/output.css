@@ -556,6 +556,9 @@
   .items-center {
     align-items: center;
   }
+  .items-center-safe {
+    align-items: safe center;
+  }
   .justify-between {
     justify-content: space-between;
   }
@@ -564,6 +567,9 @@
   }
   .justify-items-center {
     justify-items: center;
+  }
+  .justify-items-center-safe {
+    justify-items: safe center;
   }
   .gap-0 {
     gap: calc(var(--spacing) * 0);
