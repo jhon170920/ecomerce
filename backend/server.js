@@ -2,7 +2,8 @@ import express from 'express';
 import cors from 'cors';
 import "./db/db.js";
 import ProductRoutes from "./routes/productos.js";
-import userRoutes from './models/user.js';
+import userRoutes from './routes/user.js';
+import { loginUsuario } from './controllers/login.js';
 
 const app = express();
 //habilitar todas la rutas
@@ -16,6 +17,7 @@ app.get('/',(req,res)=> {
 });
 //api producto
 app.use("/api/productos",ProductRoutes);
-app.use("/api/user", userRoutes)
+app.use("/api/user", userRoutes);
+app.use("/api/login", loginUsuario);
 
 app.listen(8081,()=>console.log('servidor corriendo en http://localhost:8081'));
