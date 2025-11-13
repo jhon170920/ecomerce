@@ -38,7 +38,7 @@
                         Categorias
                         <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-600 transition-all duration-200 group-hover:w-full"></span>
                     </a>
-                    <a href="#" class="text-gray-700 hover:text-blue-600 font-medium transition-colors duration-200 relative group">
+                    <a href="./contactenos.html" class="text-gray-700 hover:text-blue-600 font-medium transition-colors duration-200 relative group">
                         Contactos
                         <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-600 transition-all duration-200 group-hover:w-full"></span>
                     </a>
@@ -68,7 +68,7 @@
         <h1 class="text-4xl text-center mt-2">Contactenos</h1>
 
         <!-- Grid: left = formulario (2 cols), right = secciones adicionales (1 col) -->
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6 mx-auto max-w-6xl px-4">
             <!-- LEFT: Contact form (ocupa 2 columnas en md+) -->
             <div class="sm:w-full mx-auto md:col-span-1 lg:col-span-1">
                 <section id="contactenos-section" class="bg-white border-px border-gray-300 p-6 rounded-lg shadow-md">
@@ -103,9 +103,12 @@
                                 <p>Mensaje</p>
                                 <textarea name="mensaje" id="mensaje" placeholder="Escribe tu mensaje aquí..." required rows="6" class="border border-gray-300 p-2 rounded-lg resize-y w-full"></textarea>
                             </label>
-                            <p class="mt-3 text-sm">
-                                <label class="inline-flex items-center"><input type="checkbox" class="mr-2">He leído y acepto la <a href="#" class="text-blue-600 underline ml-0.5 mr-0.5"> política de privacidad </a> y el tratamiento de mis datos personales</label>
-                            </p>
+                            <div class="mt-3">
+                                <label class="flex items-center text-sm gap-2">
+                                    <input type="checkbox" class="mr-2">
+                                    <span>He leído y acepto la <a href="#" class="text-blue-600 underline">política de privacidad</a> y el tratamiento de mis datos personales</span>
+                                </label>
+                            </div>
                             <div class="mt-4">
                                 <button type="submit" class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition">Enviar mensaje</button>
                             </div>
