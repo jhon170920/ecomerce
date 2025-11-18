@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', function() {
             return;
         }
         //cambia el boton mientras se procesa
-        btn.disable=true;
+        btn.disabled=true;
         btn.textContent='Iniciando Sesion...';
 
         //envaindo los datos
@@ -43,10 +43,10 @@ document.addEventListener('DOMContentLoaded', function() {
                 //guardar informacion
                 localStorage.setItem("SessionActiva", "true")
                 localStorage.setItem("Usuario", JSON.stringify({
-                    id: resultado.usuario.id,
+                    id: resultado.usuario._id,
                     Name:resultado.usuario.name,
-                    email:resultado.usuario.email,
-                    tel:resultado.usuario.tel
+                    Email:resultado.usuario.email,
+                    telefono:resultado.usuario.tel
 
                 }));
                 //mensaje de exito
@@ -54,19 +54,20 @@ document.addEventListener('DOMContentLoaded', function() {
                 errorMsg.textContent='Inicio de sesion exitoso. Redirigiendo...';
                 errorDiv.classList.remove('hidden');
                 //redirigir a productos
-                setTimeout(()=> window.location.href = 'productos.html', 8000);
-            //credenciales incorrectas
+                setTimeout(()=> window.location.href = 'productos.html', 3000);
+            
             }else{
+                //credenciales incorrectas
                 errorMsg.textContent=resultado.message ||'credenciales incorrectas';
                 errorDiv.classList.remove('hidden');
-                btn.disable=false;
+                btn.disabled=false;
                 btn.innerHTML='Iniciar Sesion';
             }
         } catch (error) {
-            console.error('Error 404- Error de conexion con el servidor');
+            console.error('Error 404- Error de conexion con el servidor', error); // Agregar detalles del error para depuración
             errorMsg.textContent='Error de conexion con el servidor';
             errorDiv.classList.remove('hidden');
-            btn.disable=false;
+            btn.disabled=false;
             btn.innerHTML='Iniciar Sesion';
         }
     })
