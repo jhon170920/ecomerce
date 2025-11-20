@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', function() {
     //Envair los datos del formulario
     document.getElementById('login-form').addEventListener('submit', async function(e){
         e.preventDefault();
-        //preparamos los elementos de la pagina
+        //preparamos los elementos de la pagina 
         const btn = document.getElementById('login-btn');
         const errorDiv = document.getElementById('login-error');
         const errorMsg = document.getElementById('login-error-message');
@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', function() {
         //recoger los cambios del formulario
         const datos = {
             email: document.getElementById('email').value.trim(),
-            pass: document.getElementById('password').value,
+            pass: document.getElementById('password').value
         };
        
         //validamos que los campos no esten vacios
@@ -41,12 +41,12 @@ document.addEventListener('DOMContentLoaded', function() {
             if (response.ok){
                 console.log('201 incio de sesion exitoso');
                 //guardar informacion
-                localStorage.setItem("SessionActiva", "true")
-                localStorage.setItem("Usuario", JSON.stringify({
+                localStorage.setItem("sessionActiva", "true")
+                localStorage.setItem("usuario", JSON.stringify({
                     id: resultado.usuario._id,
-                    Name:resultado.usuario.name,
-                    Email:resultado.usuario.email,
-                    telefono:resultado.usuario.tel
+                    name:resultado.usuario.name,
+                    email:resultado.usuario.email,
+                    telefono:resultado.usuario.telefono
 
                 }));
                 //mensaje de exito
