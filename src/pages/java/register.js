@@ -1,9 +1,10 @@
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     console.log('Página cargada correctamente');
 
+    // URL correcta según tu backend
     const API_URL = 'http://localhost:8081/api/user/register';
 
-    document.getElementById('register-form').addEventListener('submit', async function(e){
+    document.getElementById('register-form').addEventListener('submit', async function (e) {
         e.preventDefault();
 
         const btn = document.getElementById('register-button');
@@ -11,44 +12,48 @@ document.addEventListener('DOMContentLoaded', function() {
         const errorMsg = document.getElementById('register-error-message');
         errorDiv.classList.add('hidden');
 
-        const datos = {
-            name: document.getElementById('Nombre').value,
-            email: document.getElementById('Email').value.trim(),
-            tel: document.getElementById('Telefono-num').value.trim(),
-            pass: document.getElementById('password').value,            
-            //passwordConfirm: document.getElementById('password-confirm').value,
-        };
+        // Campos del formulario
+        const name = document.getElementById('Nombre').value.trim();
+        const email = document.getElementById('Email').value.trim();
+        const tel = document.getElementById('Telefono-num').value.trim();
+        const pass = document.getElementById('password').value;
+        const passConfirm = document.getElementById('password-confirm').value;
 
-        if (!datos.name || !datos.email || !datos.tel || !datos.pass /*|| !datos.passwordConfirm*/) {
-            errorMsg.textContent = 'Por favor, complete los datos.';
+        // Validación de campos obligatorios
+        if (!name || !email || !tel || !pass || !passConfirm) {
+            errorMsg.textContent = 'Por favor, complete todos los campos.';
             errorDiv.classList.remove('hidden');
             return;
         }
-        /*
-        if (datos.password !== datos.passwordConfirm){
+
+        // Validación de contraseñas
+        if (pass !== passConfirm) {
             errorMsg.textContent = 'Las contraseñas no coinciden.';
             errorDiv.classList.remove('hidden');
             return;
         }
-        */
+
+        // Datos que se enviarán al backend
+        const datos = { name, email, tel, pass };
+
         btn.disabled = true;
         btn.textContent = 'Creando cuenta...';
 
         try {
             const response = await fetch(API_URL, {
                 method: 'POST',
-                headers: {'Content-Type':'application/json'},
+                headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(datos)
             });
 
             const resultado = await response.json();
 
-            if (response.ok){
+            if (response.ok) {
                 errorDiv.className = 'bg-green-100 border-green-200 text-green-800 px-4 py-3 rounded-lg';
                 errorMsg.textContent = 'Usuario creado exitosamente. Redirigiendo al login...';
                 errorDiv.classList.remove('hidden');
 
-                setTimeout(()=> window.location.href = 'login.html', 3000);
+                setTimeout(() => window.location.href = 'login.html', 3000);
             } else {
                 errorMsg.textContent = resultado.message || 'Error al crear el usuario';
                 errorDiv.classList.remove('hidden');
