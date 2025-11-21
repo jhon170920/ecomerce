@@ -41,7 +41,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     contenedor.innerHTML = `
     <div class ="relative">
        <button id="user-menu-btn"
-            class="w-14 h-14 rounded-full bg-blue-600 text-white flex items-center justify-center font-bold text-xl shadow-md hover:scale-105 transition-transform">
+            class="w-8 h-8 rounded-full bg-blue-600 text-white flex items-center justify-center font-bold text-xl shadow-md hover:scale-105 transition-transform">
              <span id="user-avatar"></span>
     
         </button>
