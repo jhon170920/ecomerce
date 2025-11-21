@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../style/output.css">
-    <title>Login</title>
+    <title>Registrate</title>
     <script src="https://kit.fontawesome.com/5012016c5a.js" crossorigin="anonymous"></script>
 </head>
 <body>
@@ -15,9 +15,7 @@
                 <div class="flex items-center">
                     <div class="bg-linear-to-r from-blue-600 to-purple-600 text-white px-3 py-2 rounded-lg mr-3">
                         <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
-                            <path d="M3 4a1 1 0 011-1h12a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1V4zM3 10a1 1 0 011-1h6a1 1 0 011 1v6a1
-                             0 01-1 1H4a1 1 0 01-1-1v-6zM14 9a1 1 0 00-1 1v6a1
-                            1 0 001 1h2a1 1 0 001-1v-6a1 1 0 00-1-1h-2z"/>
+                            <path d="M3 4a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V4z M3 10a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1v6a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1v-6z M14 9a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1h2a1 1 0 0 0 1-1v-6a1 1 0 0 0-1-1h-2z"/>
                         </svg>
                     </div>
                     
@@ -68,7 +66,7 @@
     </header>
     <!--Contenido Principal - Formulario de Login-->
     <main class=" flex-1 flex items-center justify-center px-4 py-12 bg-linear-to-br from-blue-50 to-purple-50">
-        <div class="w-full max-w-md animate-fade-in">
+        <div class="w-full max-w-2/5 animate-fade-in">
             <!--Card principal del register-->
             <div class="bg-white rounded-2xl shadow-2xl p-8 border-gray-100">
                 <!--Titulo y descripcion-->
@@ -103,9 +101,7 @@
                     <!-- Campo de correo -->
                     <div>
                         <label for="Email" class="block text-sm font-medium text-gray-700 mb-2">
-                            <svg class="w-4 h-4 inline mr-2 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 12a4 4 0 10-8 0 4 4 0 008 0zm0 0v1.5a2.5 2.5 0 005 0V12a9 9 0 10-9 9m4.5-1.206a8.959 8.959 0 01-4.5 1.207"/>
-                            </svg>
+                            <i class="fa-solid fa-at w-4 h-4 inline mr-2 text-gray-400"></i>
                         Correo electrónico
                         </label>
                         <input
@@ -138,7 +134,8 @@
                     <!--Campo de contraseña-->
                     <div>
                         <label for="password" class="block text-sm font-medium text-gray-700 mb-2">
-                            <i class="fa-solid fa-lock w"></i>
+                            <i class="fa-solid fa-key w-4 h-4 inline mr-2 text-gray-400"></i>
+                        
                             Contraseña
                         </label>
                         <div class="relative">
@@ -154,7 +151,6 @@
                                 type="button" 
                                 id="toggle-password"
                                 class="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-600 transition-colors" > 
-                           
                                 <svg id="eye-icon-open" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/>
@@ -170,9 +166,7 @@
                     <!--Confirmar Contraseña-->
                     <div>
                         <label for="password-confirm" class="block text-sm font-medium text-gray-700 mb-2">
-                            <svg class="w-4 h-4 inline mr-2 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/>
-                            </svg>
+                            <i class="fa-solid fa-lock w-4 h-4 inline mr-2 text-gray-400"></i>
                             Confirmar contraseña
                         </label>
                         <div class="relative">
@@ -243,6 +237,6 @@
             </div>
     </main>
     <script src="./java/register.js"></script>
-    <script src="./java/toggle.js"></script>
+    <script src="./java/toggle-Registro.js"></script>
 </body>
 </html>

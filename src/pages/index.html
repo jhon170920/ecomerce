@@ -14,9 +14,7 @@
                 <div class="flex items-center">
                     <div class="bg-linear-to-r from-blue-600 to-purple-600 text-white px-3 py-2 rounded-lg mr-3">
                         <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
-                            <path d="M3 4a1 1 0 011-1h12a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1V4zM3 10a1 1 0 011-1h6a1 1 0 011 1v6a1
-                             0 01-1 1H4a1 1 0 01-1-1v-6zM14 9a1 1 0 00-1 1v6a1
-                            1 0 001 1h2a1 1 0 001-1v-6a1 1 0 00-1-1h-2z"/>
+                            <path d="M3 4a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V4z M3 10a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1v6a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1v-6z M14 9a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1h2a1 1 0 0 0 1-1v-6a1 1 0 0 0-1-1h-2z"/>
                         </svg>
                     </div>
                     <h1 class="text-2xl font-bold bg-linear-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
@@ -44,6 +42,7 @@
                 </div>
                 <!-- Cart and Mobile Menu MEJORADOS -->
                  <div class="flex items-center space-x-4">
+                    <div id="user-menu-container"></div>
                     <!--Icono de carrito Mejorado - coherente con carrito -->
                     <a href="#" class="cart-icon relative group p-2.5 hover:bg-linear-to-r hover:from-blue-50 hover:to-indigo-50 rounded-xl 
                     transition-all duration-300 transform hover:scale-105">
@@ -350,5 +349,11 @@
             </div>
         </div>
      </footer>
+     <div id="logout-toast"
+          class="hidden fixed top-5 right-5 bg-green-600 text-white px-5 py-3 rounded-xl shadow-2xl z-9999
+            opacity-0 transition-opacity duration-500 text-sm font-semibold">
+               Sesión cerrada correctamente
+    </div>
+    <script src="../pages/java/perfil.js"></script>
 </body>
 </html>
