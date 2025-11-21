@@ -7,6 +7,15 @@ document.addEventListener('DOMContentLoaded', function() {
     //Enviar los datos del formulario
     document.getElementById('login-form').addEventListener('submit', async function(e){
         e.preventDefault();
+        if(localStorage.getItem("sessionActiva") === "true"){
+            console.log('Sesion ya activa');
+            const errorDiv = document.getElementById('login-error');
+            const errorMsg = document.getElementById('login-error-message');
+            errorDiv.className='bg-yellow-100 border-yellow-200 text-yellow-800 px-4 py-3 rounded-lg';
+            errorMsg.textContent='Ya hay una sesión activa.';
+            errorDiv.classList.remove('hidden');
+            return;
+        }
         //preparamos los elementos de la pagina 
         const btn = document.getElementById('login-btn');
         const errorDiv = document.getElementById('login-error');
