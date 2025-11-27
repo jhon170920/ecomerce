@@ -137,14 +137,14 @@ document.getElementById("user-avatar").textContent = avatar;
         </div>
         `;
         
-        // ✅ CORRECCIÓN: usar el ID correcto "user-avatar-perfil"
+        // Inicial del nombre en el avatar
         const avatarSpan = `${usuario.name[0]}`.toUpperCase();
         document.getElementById("user-avatar-perfil").textContent = avatarSpan;
         
-        // ✅ Nombre del usuario al lado del avatar
+        // Nombre del usuario junto al avatar
         document.getElementById("user-perfil-name").textContent = `${usuario.name}`;
         
-        // ✅ Correo del usuario al lado del avatar
+        // Correo del usuario al lado del avatar
         document.getElementById("user-perfil-email").textContent = usuario.email;
         
         // LLENAR LOS CAMPOS DEL FORMULARIO
@@ -153,8 +153,30 @@ document.getElementById("user-avatar").textContent = avatar;
         document.getElementById("telefono").value = usuario.telefono || usuario.phone || '';
     }
 });
+// Botones para editar y cancelar
+
+const btnPrincipal = document.getElementById('btn-principal');
+const btnCancelar = document.getElementById('btn-cancelar');
+const acciones = document.getElementById('acciones')
+
+btnPrincipal.addEventListener('click', () => {
+    // habilitar botones secundarios
+    acciones.classList.remove('hidden');
+    // ocultar boton principal
+    btnPrincipal.classList.add('hidden');
+    // habilitar campos de formulario
+    document.getElementById('nombre').removeAttribute('disabled');
+    document.getElementById('email').removeAttribute('disabled');
+    document.getElementById('telefono').removeAttribute('disabled');
+});
+btnCancelar.addEventListener('click', () => {
+    // ocultar botones secundarios
+    acciones.classList.add('hidden');
+    // mostrar boton principal
+    btnPrincipal.classList.remove('hidden');
+});
 //FUNCIÓN PARA EDITAR PERFIL
-// ========================================
+
 async function editarPerfil() {
     const nombre = document.getElementById('nombre').value.trim();
     const email = document.getElementById('email').value.trim();
@@ -200,5 +222,3 @@ async function editarPerfil() {
         alert('❌ Error al actualizar el perfil: ' + error.message);
     }
 }
-
-
