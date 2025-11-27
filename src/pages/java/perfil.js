@@ -125,5 +125,80 @@ document.getElementById("user-avatar").textContent = avatar;
             }, 1500);
         }
     });
-
+// seccion de perfil: actualizar datos de perfil
+    const contenedorAvatar = document.getElementById("user-perfil-avatar");
+    if (contenedorAvatar) {
+        // Crear el avatar con gradiente
+        contenedorAvatar.innerHTML = `
+        <div class="relative">
+            <div class="w-24 h-24 rounded-full bg-gradient-to-br from-indigo-500 to-purple-600 text-white flex items-center justify-center font-bold text-3xl shadow-md">
+                <span id="user-avatar-perfil"></span>
+            </div>
+        </div>
+        `;
+        
+        // ✅ CORRECCIÓN: usar el ID correcto "user-avatar-perfil"
+        const avatarSpan = `${usuario.name[0]}`.toUpperCase();
+        document.getElementById("user-avatar-perfil").textContent = avatarSpan;
+        
+        // ✅ Nombre del usuario al lado del avatar
+        document.getElementById("user-perfil-name").textContent = `${usuario.name}`;
+        
+        // ✅ Correo del usuario al lado del avatar
+        document.getElementById("user-perfil-email").textContent = usuario.email;
+        
+        // LLENAR LOS CAMPOS DEL FORMULARIO
+        document.getElementById("nombre").value = usuario.name || '';
+        document.getElementById("email").value = usuario.email || '';
+        document.getElementById("telefono").value = usuario.telefono || usuario.phone || '';
+    }
 });
+//FUNCIÓN PARA EDITAR PERFIL
+// ========================================
+async function editarPerfil() {
+    const nombre = document.getElementById('nombre').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const telefono = document.getElementById('telefono').value.trim();
+
+    // Validaciones básicas
+    if (!nombre || !email) {
+        alert('Por favor completa los campos obligatorios (Nombre y Email)');
+        return;
+    }
+
+    // Preparar datos para enviar al servidor
+    const datosActualizados = {
+        email: email,
+        name: nombre,
+        telefono: telefono
+    };
+
+    try {
+        // Enviar al servidor
+        const res = await fetch("http://localhost:8081/api/perfil/actualizar", {
+            method: "PUT",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(datosActualizados)
+        });
+
+        const data = await res.json();
+
+        if (!res.ok) {
+            throw new Error(data.message || "Error al actualizar el perfil");
+        }
+
+        // Actualizar localStorage
+        localStorage.setItem('usuario', JSON.stringify(datosActualizados));
+
+        alert('✅ Perfil actualizado exitosamente!');
+        
+        // Recargar la página para mostrar los cambios
+        location.reload();
+
+    } catch (error) {
+        console.error("Error al actualizar perfil:", error);
+        alert('❌ Error al actualizar el perfil: ' + error.message);
+    }
+}
+
+
