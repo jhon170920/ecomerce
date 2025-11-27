@@ -131,7 +131,7 @@ document.getElementById("user-avatar").textContent = avatar;
         // Crear el avatar con gradiente
         contenedorAvatar.innerHTML = `
         <div class="relative">
-            <div class="w-24 h-24 rounded-full bg-gradient-to-br from-indigo-500 to-purple-600 text-white flex items-center justify-center font-bold text-3xl shadow-md">
+            <div class="w-24 h-24 rounded-full bg-linear-to-br from-indigo-500 to-purple-600 text-white flex items-center justify-center font-bold text-3xl shadow-md">
                 <span id="user-avatar-perfil"></span>
             </div>
         </div>
