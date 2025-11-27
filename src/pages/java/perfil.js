@@ -125,13 +125,34 @@ document.getElementById("user-avatar").textContent = avatar;
             }, 1500);
         }
     });
+// Botones para editar y cancelar
+
+const btnPrincipal = document.getElementById('btn-principal');
+const btnCancelar = document.getElementById('btn-cancelar');
+const acciones = document.getElementById('acciones')
+
+btnPrincipal.addEventListener('click', () => {
+    // habilitar botones secundarios
+    acciones.classList.remove('hidden');
+    // ocultar boton principal
+    btnPrincipal.classList.add('hidden');
+    // habilitar campos de formulario
+    document.getElementById('nombre').removeAttribute('disabled');
+    document.getElementById('telefono').removeAttribute('disabled');
+});
+btnCancelar.addEventListener('click', () => {
+    // ocultar botones secundarios
+    acciones.classList.add('hidden');
+    // mostrar boton principal
+    btnPrincipal.classList.remove('hidden');
+});
 // seccion de perfil: actualizar datos de perfil
     const contenedorAvatar = document.getElementById("user-perfil-avatar");
     if (contenedorAvatar) {
         // Crear el avatar con gradiente
         contenedorAvatar.innerHTML = `
         <div class="relative">
-            <div class="w-24 h-24 rounded-full bg-gradient-to-br from-indigo-500 to-purple-600 text-white flex items-center justify-center font-bold text-3xl shadow-md">
+            <div class="w-24 h-24 rounded-full bg-linear-to-br from-indigo-500 to-purple-600 text-white flex items-center justify-center font-bold text-3xl shadow-md">
                 <span id="user-avatar-perfil"></span>
             </div>
         </div>
@@ -153,28 +174,7 @@ document.getElementById("user-avatar").textContent = avatar;
         document.getElementById("telefono").value = usuario.telefono || usuario.phone || '';
     }
 });
-// Botones para editar y cancelar
 
-const btnPrincipal = document.getElementById('btn-principal');
-const btnCancelar = document.getElementById('btn-cancelar');
-const acciones = document.getElementById('acciones')
-
-btnPrincipal.addEventListener('click', () => {
-    // habilitar botones secundarios
-    acciones.classList.remove('hidden');
-    // ocultar boton principal
-    btnPrincipal.classList.add('hidden');
-    // habilitar campos de formulario
-    document.getElementById('nombre').removeAttribute('disabled');
-    document.getElementById('email').removeAttribute('disabled');
-    document.getElementById('telefono').removeAttribute('disabled');
-});
-btnCancelar.addEventListener('click', () => {
-    // ocultar botones secundarios
-    acciones.classList.add('hidden');
-    // mostrar boton principal
-    btnPrincipal.classList.remove('hidden');
-});
 //FUNCIÓN PARA EDITAR PERFIL
 
 async function editarPerfil() {
@@ -192,7 +192,7 @@ async function editarPerfil() {
     const datosActualizados = {
         email: email,
         name: nombre,
-        telefono: telefono
+        telefono: telefono,
     };
 
     try {
@@ -222,3 +222,40 @@ async function editarPerfil() {
         alert('❌ Error al actualizar el perfil: ' + error.message);
     }
 }
+//FUNCIÓN PARA BORRAR CUENTA
+document.getElementById('btn-borrar').addEventListener('click', async () => {
+    const email = document.getElementById('email').value.trim();
+
+    if (!email) {
+        alert('❌ Error: Email no encontrado.');
+        return;
+    }
+
+    const confirmacion = confirm('¿Estás seguro de que deseas borrar tu cuenta? Esta acción es irreversible.');
+
+    if (!confirmacion) return;
+
+    try {
+        const res = await fetch("http://localhost:8081/api/perfil/eliminar", {
+            method: "DELETE",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ email: email })
+        });
+
+        const data = await res.json();
+
+        if (!res.ok) {
+            throw new Error(data.message || "Error al borrar la cuenta");
+        }
+
+        alert('✅ Cuenta borrada exitosamente.');
+
+        // Limpiar sesión y redirigir al login
+        localStorage.clear();
+        window.location.href = "../pages/login.html";
+
+    } catch (error) {
+        console.error("Error al borrar cuenta:", error);
+        alert('❌ Error al borrar la cuenta: ' + error.message);
+    }
+}); 
