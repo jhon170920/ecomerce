@@ -146,6 +146,7 @@ btnCancelar.addEventListener('click', () => {
     // mostrar boton principal
     btnPrincipal.classList.remove('hidden');
 });
+
 // seccion de perfil: actualizar datos de perfil
     const contenedorAvatar = document.getElementById("user-perfil-avatar");
     if (contenedorAvatar) {
