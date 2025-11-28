@@ -172,7 +172,7 @@ btnCancelar.addEventListener('click', () => {
         // LLENAR LOS CAMPOS DEL FORMULARIO
         document.getElementById("nombre").value = usuario.name || '';
         document.getElementById("email").value = usuario.email || '';
-        document.getElementById("telefono").value = usuario.telefono || usuario.phone || '';
+        document.getElementById("telefono").value = usuario.telefono || '';
     }
 });
 
