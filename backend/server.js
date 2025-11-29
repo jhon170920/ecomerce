@@ -5,6 +5,7 @@ import ProductRoutes from "./routes/productos.js";
 import userRoutes from './routes/user.js';
 import { loginUsuario } from './controllers/login.js';
 import PerfilRouter from './routes/perfil.js';
+import RecuperarPassword from './routes/recuperar.js'
 
 const app = express();
 //habilitar todas la rutas
@@ -20,7 +21,8 @@ app.get('/',(req,res)=> {
 app.use("/api/productos",ProductRoutes);
 app.use("/api/user", userRoutes);
 app.use("/api/login", loginUsuario);
-app.use("/api/perfil", PerfilRouter)
+app.use("/api/perfil", PerfilRouter);
+app.use("/api/Recuperar", RecuperarPassword);
 
 
 app.listen(8081,()=>console.log('servidor corriendo en http://localhost:8081'));

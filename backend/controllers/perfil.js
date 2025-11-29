@@ -1,5 +1,6 @@
 //importamos la base de datos
 import users from "../models/user.js"
+import bcrypt from 'bcrypt'
 
 //obtener perfil del usuario de la base de datos
 
@@ -29,8 +30,9 @@ export const obtenerPerfil = async (req, res ) =>{
         });
     }
 }
+
 //Actualizar perfil del usuario
-export const actualizarPerfil = async (req, res) =>{
+ export const actualizarPerfil = async (req, res) =>{
     try {
         const {email, name, telefono} = req.body; 
         if(!email || !name){
@@ -40,6 +42,7 @@ export const actualizarPerfil = async (req, res) =>{
         const usuario = await users.findOneAndUpdate(
             {email:email},
             {
+                email:email,
                 name:name,
                 tel:telefono
             },
@@ -59,6 +62,41 @@ export const actualizarPerfil = async (req, res) =>{
     } catch (error) {
         res.status(500).json({
             message:"error al actualizar el perfil", error: error.message
+        });
+    }
+};
+
+//Eliminar perfil del usuario
+export const eliminarPerfil = async (req, res) =>{
+    try {
+        const {email} = req.body;
+        // Validar que el email sea proporcionado
+        if(!email){
+            return res.status(400).json({
+                message:"Email es requeridos"
+            });
+        }
+        //Buscar e eliminar a el usuario en la base de datos
+        const usuarioEliminado = await users.findOneAndDelete({
+            email:email
+        });
+        if(!usuarioEliminado){
+            return res.status(404).json({
+                message:"Usuario no encontrado"
+            });
+    }
+        res.status(200).json({
+            message:"Usuario eliminado exitosamente",
+            users: {
+                id:usuarioEliminado._id,
+                name:usuarioEliminado.name,
+                email:usuarioEliminado.email,
+                telefono:usuarioEliminado.tel
+            }
+        });
+    } catch (error) {
+        res.status(500).json({
+            message:"Error al eliminar el perfil", error: error.message
         });
     }
 };

@@ -125,6 +125,28 @@ document.getElementById("user-avatar").textContent = avatar;
             }, 1500);
         }
     });
+// Botones para editar y cancelar
+
+const btnPrincipal = document.getElementById('btn-principal');
+const btnCancelar = document.getElementById('btn-cancelar');
+const acciones = document.getElementById('acciones')
+
+btnPrincipal.addEventListener('click', () => {
+    // habilitar botones secundarios
+    acciones.classList.remove('hidden');
+    // ocultar boton principal
+    btnPrincipal.classList.add('hidden');
+    // habilitar campos de formulario
+    document.getElementById('nombre').removeAttribute('disabled');
+    document.getElementById('telefono').removeAttribute('disabled');
+});
+btnCancelar.addEventListener('click', () => {
+    // ocultar botones secundarios
+    acciones.classList.add('hidden');
+    // mostrar boton principal
+    btnPrincipal.classList.remove('hidden');
+});
+
 // seccion de perfil: actualizar datos de perfil
     const contenedorAvatar = document.getElementById("user-perfil-avatar");
     if (contenedorAvatar) {
@@ -137,24 +159,25 @@ document.getElementById("user-avatar").textContent = avatar;
         </div>
         `;
         
-        // ✅ CORRECCIÓN: usar el ID correcto "user-avatar-perfil"
+        // Inicial del nombre en el avatar
         const avatarSpan = `${usuario.name[0]}`.toUpperCase();
         document.getElementById("user-avatar-perfil").textContent = avatarSpan;
         
-        // ✅ Nombre del usuario al lado del avatar
+        // Nombre del usuario junto al avatar
         document.getElementById("user-perfil-name").textContent = `${usuario.name}`;
         
-        // ✅ Correo del usuario al lado del avatar
+        // Correo del usuario al lado del avatar
         document.getElementById("user-perfil-email").textContent = usuario.email;
         
         // LLENAR LOS CAMPOS DEL FORMULARIO
         document.getElementById("nombre").value = usuario.name || '';
         document.getElementById("email").value = usuario.email || '';
-        document.getElementById("telefono").value = usuario.telefono || usuario.phone || '';
+        document.getElementById("telefono").value = usuario.telefono || '';
     }
 });
+
 //FUNCIÓN PARA EDITAR PERFIL
-// ========================================
+
 async function editarPerfil() {
     const nombre = document.getElementById('nombre').value.trim();
     const email = document.getElementById('email').value.trim();
@@ -170,7 +193,7 @@ async function editarPerfil() {
     const datosActualizados = {
         email: email,
         name: nombre,
-        telefono: telefono
+        telefono: telefono,
     };
 
     try {
@@ -200,5 +223,40 @@ async function editarPerfil() {
         alert('❌ Error al actualizar el perfil: ' + error.message);
     }
 }
+//FUNCIÓN PARA BORRAR CUENTA
+document.getElementById('btn-borrar').addEventListener('click', async () => {
+    const email = document.getElementById('email').value.trim();
 
+    if (!email) {
+        alert('❌ Error: Email no encontrado.');
+        return;
+    }
 
+    const confirmacion = confirm('¿Estás seguro de que deseas borrar tu cuenta? Esta acción es irreversible.');
+
+    if (!confirmacion) return;
+
+    try {
+        const res = await fetch("http://localhost:8081/api/perfil/eliminar", {
+            method: "DELETE",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ email: email })
+        });
+
+        const data = await res.json();
+
+        if (!res.ok) {
+            throw new Error(data.message || "Error al borrar la cuenta");
+        }
+
+        alert('✅ Cuenta borrada exitosamente.');
+
+        // Limpiar sesión y redirigir al login
+        localStorage.clear();
+        window.location.href = "../pages/login.html";
+
+    } catch (error) {
+        console.error("Error al borrar cuenta:", error);
+        alert('❌ Error al borrar la cuenta: ' + error.message);
+    }
+}); 
