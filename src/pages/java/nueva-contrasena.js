@@ -92,6 +92,5 @@ async function restablecerPassword() {
         btnRestablecer.disabled = false;
     }
 }
-
 // Hacer la función global para que funcione con onclick
 window.restablecerPassword = restablecerPassword;
