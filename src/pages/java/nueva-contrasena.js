@@ -26,7 +26,7 @@ async function restablecerPassword() {
 
     // Validaciones
     if (!codigo) {
-        alert('⚠️ Por favor ingresa el código de 6 dígitos');
+        alert('⚠️ Por favor ingresa el código de 5 dígitos');
         return;
     }
 
