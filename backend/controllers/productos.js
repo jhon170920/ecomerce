@@ -21,7 +21,8 @@ export const crearProducto = async(req,res)=>{
         res.status(400).json({ message: "Error al ingresar el producto" });
       }
     };
-    
+  
+    //OBTENER LOS PRODUCTOS
     export const obtenerProductos = async (req, res) => {
       try{
         const ListProductos = await productos.find();
