@@ -37,11 +37,11 @@ export const crearPedido = async (req, res) => {
             estado_pedido: 'pendiente'
         });
 
-        console.log("✅ Objeto pedido creado:", JSON.stringify(newPedido, null, 2));
+        console.log("Objeto pedido creado:", JSON.stringify(newPedido, null, 2));
 
         await newPedido.save();
         
-        console.log("✅ Pedido guardado exitosamente con ID:", newPedido._id);
+        console.log("Pedido guardado exitosamente con ID:", newPedido._id);
         
         res.status(201).json({ 
             message: "Pedido creado con éxito",
@@ -53,7 +53,7 @@ export const crearPedido = async (req, res) => {
         });
         
     } catch (error) {
-        console.error("❌ Error al crear el pedido:", error);
+        console.error("Error al crear el pedido:", error);
         
         // Manejar errores de validación de Mongoose
         if (error.name === 'ValidationError') {
