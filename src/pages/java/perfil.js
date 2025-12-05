@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     // Solicitar datos actualizados del servidor
     try {
-        const res = await fetch("http://localhost:8081/api/perfil/obtener", {
+        const res = await fetch("https://ecomerce-c5tt.onrender.com/api/perfil/obtener", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ email: perfil.email })
@@ -198,7 +198,7 @@ async function editarPerfil() {
 
     try {
         // Enviar al servidor
-        const res = await fetch("http://localhost:8081/api/perfil/actualizar", {
+        const res = await fetch("https://ecomerce-c5tt.onrender.com/api/perfil/actualizar", {
             method: "PUT",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(datosActualizados)
@@ -237,7 +237,7 @@ document.getElementById('btn-borrar').addEventListener('click', async () => {
     if (!confirmacion) return;
 
     try {
-        const res = await fetch("http://localhost:8081/api/perfil/eliminar", {
+        const res = await fetch("https://ecomerce-c5tt.onrender.com/api/perfil/eliminar", {
             method: "DELETE",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ email: email })

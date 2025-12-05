@@ -55,7 +55,7 @@ async function restablecerPassword() {
     btnRestablecer.disabled = true;
 
     try {
-        const res = await fetch('http://localhost:8081/api/Recuperar/cambiar-password', {
+        const res = await fetch('https://ecomerce-c5tt.onrender.com/api/Recuperar/cambiar-password', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({

@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', function () {
     console.log('Página cargada correctamente');
 
     // URL correcta según tu backend
-    const API_URL = 'http://localhost:8081/api/user/register';
+    const API_URL = 'https://ecomerce-c5tt.onrender.com/api/user/register';
 
     document.getElementById('register-form').addEventListener('submit', async function (e) {
         e.preventDefault();

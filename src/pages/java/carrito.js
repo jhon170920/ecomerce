@@ -118,7 +118,7 @@ async function finalizarCompra() {
     };
     console.log("📦 Pedido a enviar:", pedido);
     try {
-        const response = await fetch("http://localhost:8081/api/pedido", {
+        const response = await fetch("https://ecomerce-c5tt.onrender.com/api/pedido", {
             method: "POST",
             headers: { 
                 "Content-Type": "application/json"

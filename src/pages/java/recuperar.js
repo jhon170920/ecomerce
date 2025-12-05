@@ -26,7 +26,7 @@ document.getElementById('btn-enviar')?.addEventListener('click', async (e) => {
     btnEnviar.disabled = true;
 
     try {
-        const res = await fetch('http://localhost:8081/api/Recuperar/solicitar-codigo', {
+        const res = await fetch('https://ecomerce-c5tt.onrender.com/api/Recuperar/solicitar-codigo', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' }, 
             body: JSON.stringify({ email })

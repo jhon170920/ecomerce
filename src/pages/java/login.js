@@ -2,7 +2,7 @@
 document.addEventListener('DOMContentLoaded', function() {
     console.log('pagina cargada correctamente');
     //creamos la constante de la api
-    const API_URL = 'http://localhost:8081/api/login';
+    const API_URL = 'https://ecomerce-c5tt.onrender.com/api/login';
 
     //Enviar los datos del formulario
     document.getElementById('login-form').addEventListener('submit', async function(e){
