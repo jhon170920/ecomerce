@@ -97,7 +97,7 @@ async function finalizarCompra() {
         Procesando...
     `;
 
-    // 💰 CALCULAR EL TOTAL EN EL FRONTEND
+    // CALCULAR EL TOTAL
     const precio_total = carrito.reduce((total, item) => {
         return total + (parseFloat(item.precio || item.Precio) * parseInt(item.cantidad));
     }, 0);
@@ -116,9 +116,7 @@ async function finalizarCompra() {
         direccion: `${direccion}, ${ciudad}, ${codigoPostal}`,
         metodo_pago: metodoPago
     };
-
     console.log("📦 Pedido a enviar:", pedido);
-
     try {
         const response = await fetch("http://localhost:8081/api/pedido", {
             method: "POST",
@@ -127,17 +125,14 @@ async function finalizarCompra() {
             },
             body: JSON.stringify(pedido)
         });
-
         const data = await response.json();
-
         if (response.ok) {
             alert(`✅ ¡Pedido realizado con éxito!\n\nID: ${data.pedido.id}\nTotal: $${data.pedido.total.toLocaleString()}`);
             localStorage.removeItem("carrito");
             window.location.href = "index.html";
         } else {
             console.error("Error del servidor:", data);
-            alert("❌ Error al procesar el pedido:\n" + (data.message || "Error desconocido"));
-            
+            alert("❌ Error al procesar el pedido:\n" + (data.message || "Error desconocido"));         
             if (data.errores) {
                 alert("Detalles:\n" + data.errores.join("\n"));
             }
