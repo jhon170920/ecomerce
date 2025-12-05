@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Pedido</title>
+    <style>
+        body { font-family: Arial; padding: 20px; background: #f5f5f5; }
+        .container { max-width: 600px; margin: 0 auto; background: white; padding: 20px; border-radius: 8px; }
+        button { background: #4CAF50; color: white; padding: 12px 24px; border: none; border-radius: 4px; cursor: pointer; font-size: 16px; }
+        button:hover { background: #45a049; }
+        pre { background: #f4f4f4; padding: 15px; border-radius: 4px; overflow-x: auto; }
+        .success { color: #4CAF50; }
+        .error { color: #f44336; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🧪 Test de Pedido</h1>
+        <p>Esta página prueba el endpoint de creación de pedidos</p>
+        
+        <button onclick="testPedido()">Enviar Pedido de Prueba</button>
+        
+        <h3>Resultado:</h3>
+        <pre id="resultado">Haz clic en el botón para probar...</pre>
+    </div>
+
+    <script>
+        async function testPedido() {
+            const resultado = document.getElementById('resultado');
+            resultado.textContent = '⏳ Enviando pedido...';
+
+            // Pedido de prueba con datos correctos
+            const pedidoPrueba = {
+                productos: [
+                    {
+                        producto_id: "test123",
+                        nombre: "Producto de Prueba",
+                        precio: 50000,  // Número, no string
+                        cantidad: 2     // Número, no string
+                    },
+                    {
+                        producto_id: "test456",
+                        nombre: "Otro Producto",
+                        precio: 75000,
+                        cantidad: 1
+                    }
+                ],
+                email: "test@example.com",
+                telefono: "3001234567",
+                direccion: "Calle 123, Bogotá, 110111",
+                metodo_pago: "efectivo"
+            };
+
+            console.log("📦 Enviando:", pedidoPrueba);
+
+            try {
+                const response = await fetch("http://localhost:8081/api/pedido", {
+                    method: "POST",
+                    headers: { 
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify(pedidoPrueba)
+                });
+
+                const data = await response.json();
+
+                if (response.ok) {
+                    resultado.innerHTML = `<span class="success">✅ ÉXITO</span>\n\n${JSON.stringify(data, null, 2)}`;
+                } else {
+                    resultado.innerHTML = `<span class="error">❌ ERROR ${response.status}</span>\n\n${JSON.stringify(data, null, 2)}`;
+                }
+
+            } catch (error) {
+                resultado.innerHTML = `<span class="error">❌ ERROR DE CONEXIÓN</span>\n\n${error.message}`;
+                console.error("Error:", error);
+            }
+        }
+
+        // Agregar datos de prueba al localStorage
+        window.onload = function() {
+            // Usuario de prueba
+            localStorage.setItem("usuario", JSON.stringify({
+                email: "test@example.com",
+                telefono: "3001234567",
+                nombre: "Usuario Test"
+            }));
+
+            // Carrito de prueba
+            localStorage.setItem("carrito", JSON.stringify([
+                {
+                    id: "test123",
+                    _id: "test123",
+                    nombre: "Laptop Test",
+                    precio: 1500000,  // Número
+                    imagen: "https://via.placeholder.com/100",
+                    cantidad: 1  // Número
+                }
+            ]));
+
+            console.log("✅ Datos de prueba cargados en localStorage");
+        };
+    </script>
+</body>
+</html>
