@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', function() {
         btn.disabled=true;
         btn.textContent='Iniciando Sesion...';
 
-        //envaindo los datos
+        //enviando los datos
 
         try {
             const response = await fetch(API_URL, {

@@ -13,7 +13,6 @@ function cargarCarrito() {
         carritoItems.classList.add("hidden");
         return;
     }
-
     carritoVacio.classList.add("hidden");
     carritoItems.classList.remove("hidden");
 
@@ -151,4 +150,5 @@ async function finalizarCompra() {
         `;
     }
 }
+
 
